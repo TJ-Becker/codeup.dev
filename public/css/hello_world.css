@@ -1,0 +1,33 @@
+h1, h2 {
+	color: purple;
+	text-decoration: underline;
+}
+
+body {
+	background-image: url("/img/asanoha-400px.png");)
+	background-size: 600px 450px;
+	background-position: center;
+	font-family: 'Indie Flower', cursive;
+}
+ul {
+	list-style: square;
+}
+
+td {
+	font-size: 20px;
+	padding: 10px 15px 0px 15px;
+	border: solid black;
+}
+
+a:visited {
+	color: purple;
+}
+
+a:hover {
+	color: green;
+}
+
+th {
+	text-decoration: underline;
+	font-weight: bold;
+}

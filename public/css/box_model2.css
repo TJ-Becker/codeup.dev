@@ -1,0 +1,50 @@
+h1 {
+	margin-bottom: 50px;
+	text-decoration: underline;
+}
+
+.boxes {
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+	padding: 10px 10px;
+	margin-bottom: 50px;
+	color: white;
+	float: left;
+	margin-right: 50px;
+	position: relative;
+}
+
+#red {
+	background-color: red;
+}
+
+#orange {
+	background-color: orange;
+}
+
+#yellow {
+	background-color: yellow;
+}
+
+#green {
+	background-color: green;
+}
+
+#blue {
+	background-color: blue;
+}
+
+#violet {
+	background-color: violet;
+}
+
+.boxes:nth-child(3), .boxes:nth-child(5) {
+	clear: left;
+}
+
+img {
+	position: absolute;
+	top: -40px;
+	right: -40px;
+}

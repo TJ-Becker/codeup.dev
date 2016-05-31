@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+		<style>
+			body {
+				background-color: black;
+			}
+
+			.flag {
+				background-color: white;
+				height: 300px;
+				width: 600px;
+				position: relative;
+				padding: 0;
+				margin-bottom: 3em;
+				border: 0;
+				overflow: hidden;
+			}
+
+			#denmark .flag {
+				background-color: white;
+				height: 320px;
+				width: 500px;
+				position: relative;
+				padding: 0;
+				margin: 0;
+				border: 0;
+				margin-bottom: 3em;
+			}
+
+
+			#us .flag {
+				background-color: white;
+				height: 300px;
+				width: 570px;
+				position: relative;
+				padding: 0;
+				margin: 0;
+				border: 0;
+				margin-bottom: 3em;
+			}
+
+			#seychelles .blue {
+				background-color: blue;
+				position: absolute;
+				height: 450px;
+				width: 200px;
+				transform: rotate(34deg);
+				left: -102px;
+				top: -100px;
+				z-index: 5
+			}
+
+			#seychelles .yellow {
+				background-color: yellow;
+				position: absolute;
+				height: 550px;
+				width: 200px;
+				transform: rotate(53deg);
+				top: -211px;
+				left: 50px;
+				z-index: 4;
+			}
+
+			#seychelles .red {
+				background-color: red;
+				position: absolute;
+				height: 1000px;
+				width: 850px;
+				transform: rotate(71deg);
+				top: -718px;
+				left: -220px;
+				z-index: 3;
+			}
+
+			#seychelles .green {
+				background-color: green;
+				position: absolute;
+				height: 1000px;
+				width: 850px;
+				transform: rotate(81deg);
+				top: 200px;
+				left: -232px;
+				z-index: 2;
+			}
+
+
+			#denmark .red {
+				background-color: red;
+				height: 140px;
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+
+			#denmark .left {
+				width: 140px;
+				position: absolute;
+			}
+
+			#denmark .right {
+				width: 320px;
+				position: absolute;
+
+			}
+
+			#denmark .top-left {
+				top: 8px;
+			}
+
+			#denmark .bottom-left {
+				top: 188px;
+			}
+
+			#denmark .top-right {
+				top: 8px;
+				left: 188px;
+			}
+
+			#denmark .bottom-right {
+				top: 188px;
+				left: 188px;
+			}
+
+			#star-five {
+			   margin: 50px 0;
+			   position: relative;
+			   display: block;
+			   color: red;
+			   width: 0px;
+			   height: 0px;
+			   border-right:  100px solid transparent;
+			   border-bottom: 70px  solid red;
+			   border-left:   100px solid transparent;
+			   -moz-transform:    rotate(35deg);
+			   -webkit-transform: rotate(35deg);
+			   -ms-transform:     rotate(35deg);
+			   -o-transform:      rotate(35deg);
+			}
+			#star-five:before {
+			   border-bottom: 80px solid red;
+			   border-left: 30px solid transparent;
+			   border-right: 30px solid transparent;
+			   position: absolute;
+			   height: 0;
+			   width: 0;
+			   top: -45px;
+			   left: -65px;
+			   display: block;
+			   content: '';
+			   -webkit-transform: rotate(-35deg);
+			   -moz-transform:    rotate(-35deg);
+			   -ms-transform:     rotate(-35deg);
+			   -o-transform:      rotate(-35deg);
+
+			}
+			#star-five:after {
+			   position: absolute;
+			   display: block;
+			   color: red;
+			   top: 3px;
+			   left: -105px;
+			   width: 0px;
+			   height: 0px;
+			   border-right: 100px solid transparent;
+			   border-bottom: 70px solid red;
+			   border-left: 100px solid transparent;
+			   -webkit-transform: rotate(-70deg);
+			   -moz-transform:    rotate(-70deg);
+			   -ms-transform:     rotate(-70deg);
+			   -o-transform:      rotate(-70deg);
+			   content: '';
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<section id="denmark">
+			<div class="flag">
+			</div>
+
+			<div class="red left top-left">
+			</div>
+
+			<div class="red left bottom-left">
+			</div>
+
+			<div class="red right top-right">
+			</div>
+
+			<div class ="red right bottom-right">
+			</div>
+		</section>
+
+		<section id="seychelles">
+			<div class="flag">
+				<div class="blue">
+				</div>
+				<div class="yellow">
+				</div>
+				<div class="red">
+				</div>
+				<div class="green">
+				</div>
+			</div>
+		</section>
+
+		<section id="us">
+			<div class="flag">
+				<div class="container">
+					<div id="star-five">
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
