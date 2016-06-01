@@ -10,26 +10,44 @@ if (((grade1 + grade2 + grade3) / 3) > 80) {
 
 
 
-var Ryan = 250;
-var Cameron = 180;
-var George = 320;
+var ryan = 250;
+var cameron = 180;
+var george = 320;
+var discount = .25;
+var ryanDiscount = (ryan - 200) * discount;
+var cameronDiscount = (cameron - 200) * discount;
+var georgeDiscount = (george - 200) * discount;
+var discountThreshold = 200;
 
-if (Ryan > 200) {
-	console.log("Ryan is already receiving the discount.");
+console.log("Ryan");
+
+if (ryan > discountThreshold) {
+	console.log("Amount before discount: " + ryan);
+	console.log ("Actual spend with discount: " + (ryan - ryanDiscount));
+	console.log("Amount saved: $" + ((ryan - discountThreshold) * discount));
 } else {
-	console.log("Ryan needs to spend $" + (200 - Ryan) + " more before receiving the discount.");
+	console.log("Amount spent: $" + ryan);
+	console.log("Ryan needs to spend $" + (discountThreshold - ryan) + " more before receiving the discount.");
 }
 
-if (Cameron > 200) {
-	console.log("Cameron is already receiving the discount.");
+console.log("Cameron");
+if (cameron > discountThreshold) {
+	console.log("Amount before discount: " + cameron);
+	console.log ("Actual spend with discount: " + (cameron - cameronDiscount));
+	console.log("Amount saved: $" + ((cameron - discountThreshold) * discount));
 } else {
-	console.log("Cameron needs to spend $" + (200 - Cameron) + " more before receiving the discount.");
+	console.log("Amount spent: $" + cameron);
+	console.log("Cameron needs to spend $" + (discountThreshold - cameron) + " more before receiving the discount.");
 }
 
-if (George > 200) {
-	console.log("George is already receiving the discount.");
+console.log("George");
+if (george > discountThreshold) {
+	console.log("Amount before discount: " + george);
+	console.log ("Actual spend with discount: " + (george - georgeDiscount));
+	console.log("Amount saved: $" + ((george - discountThreshold) * discount));
 } else {
-	console.log("George needs to spend $" + (200 - George) + " more before receiving the discount.");
+	console.log("Amount spent: $" + george);
+	console.log("George needs to spend $" + (discountThreshold - george) + " more before receiving the discount.");
 }
 
 
