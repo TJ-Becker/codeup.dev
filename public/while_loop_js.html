@@ -15,14 +15,20 @@
 			 		console.log("Sold " + cones + " cones to customer " + customer);
 			 		allCones = (allCones - cones);
 		 			customer++;
+		 			cones = Math.floor(Math.random() * 5) + 1;
 
-				 		if (allCones < 0) {
-				 			console.log("Sorry customer " + customer + ", I don\'t have " + cones + " cones!  You are welcome to buy " + (allCones + cones) + " instead.");
+		 				if (allCones - cones == 0) {
+		 					console.log("Perfect!")
+		 				}
+				 		
+				 		else if (cones > allCones) {
+				 			console.log("Cones left to sell: " + allCones)
+				 			console.log("Sorry customer " + customer + ", I don\'t have " + cones + " cones!  You are welcome to buy " + (allCones) + " instead.");
 				 			allCones = 0;
-						} 
+				 		}
 		 		
 			 		console.log("Cones left to sell: " + allCones);
-			 		cones = Math.floor(Math.random() * 5) + 1;
+			 		
 
 				 		if (allCones == 0) {
 							console.log("Yay!  I sold all of the cones!");
@@ -31,9 +37,9 @@
 
 			// i = 2
 			// while (i <= 65536) {
+			//	i *= 2
 			// 	console.log(i)
-			// 	i *= 2
-			// }
+			//}
 
 		</script>
 	</body>

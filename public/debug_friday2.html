@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script>
+'use strict';
+
+/*
+ * How many times a lucky number is repeated for every 100 customers?
+ */
+var luckyNumber;
+var i = 1;
+
+var zero = 0;
+var one = 0;
+var two = 0;
+var three = 0;
+var four = 0;
+var five = 0;
+
+while (i <= 100) {
+    luckyNumber = Math.floor(Math.random()* 6);
+    i++;
+    if (luckyNumber == 0) {
+    	zero++;
+    } else if (luckyNumber == 1) {
+    	one++;
+    } else if (luckyNumber == 2) {
+    	two++;
+    } else if (luckyNumber == 3) {
+    	three++;
+    } else if (luckyNumber == 4) {
+    	four++;
+    } else {
+    	five++;
+    }
+}
+	console.log("0 occured " + zero + " times.");
+	console.log("1 occured " + one + " times.");
+	console.log("2 occured " + two + " times.");
+    console.log("3 occured " + three + " times.");
+	console.log("4 occured " + four + " times.");
+	console.log("5 occured " + five + " times."); 
+
+// The output should be something like
+
+// 0 appeared 10 times
+// 1 appeared 20 times
+// 2 appeared 15 times
+// 3 appeared 35 times
+// 4 appeared 4 times
+// 5 appeared 16 times
+
+// The total should be 100
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script>
+	var random = Math.floor((Math.random()*50)+1);
+	console.log(random)
+
+	for (i = 1; i < 20; i++) {
+		if (random % 2 != 0) {
+			console.log("Odd!")
+			break;
+		}
+		 else {
+			var random = Math.floor((Math.random()*50)+1);
+			console.log("New random number: " + random)
+		}
+	}
+
+	for (j = 1; j < 50; j++) {
+
+		if (random == j) {
+			console.log("Yikes! Skipping number: " + j)
+			continue;
+		}
+		if (j % 2 != 0) {
+			console.log(j)
+		}
+
+
+
+	}
+	
+
+
+
+</script>
+</body>
+</html>
