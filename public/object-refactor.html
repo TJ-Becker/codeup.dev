@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Refactor</title>
+</head>
+<body>
+
+
+
+<script>
+console.log('heb question');
+var cameron = {
+	name: "Cameron",
+	total: 180,
+	totalWithDiscount: null
+
+}
+var ryan = {
+	name: "Ryan",
+	total: 250,
+	totalWithDiscount: null
+}
+var george = {
+	name: "Cameron",
+	total: 350,
+	totalWithDiscount: null
+}
+
+var discountRequirement = 200;
+var discount = 0.35;
+var customers = [cameron, ryan, george];
+
+function profile() {
+	this.customer.name = prompt("Customer\'s name?");
+	var additionalItems = confirm("Are there any remaining purchases?");
+	while (additionalItems == true) {
+		var product = {
+			item: prompt("Item purchased?"),
+			itemPrice: Number(prompt("Price?"))
+		}
+		this.customer.purchased.push(product);
+		var additionalItems = confirm("Are there any remaining purchases?");
+	}
+	for (i = 0; i < this.customer.purchased.length; i++) {
+		this.customer.total += this.customer.purchased[i].itemPrice;
+	}
+}
+		
+do {
+	var newCustomer = confirm("Create a new customer?");
+	if (newCustomer == true) {
+		var customer = {
+			name: null,
+			purchased: [],
+			total: 0,
+			totalWithDiscount: 0
+		}	
+		profile();
+		this.customers.push(customer);
+	} 
+} while (newCustomer == true);
+
+for (i = 0; i < customers.length; i++) {
+	function costWithDiscount(object) { 
+		if (customers[i].total > discountRequirement) {
+	    customers[i].totalWithDiscount = customers[i].total - (customers[i].total * discount);
+	    console.log(customers[i].name + "\'s total with the discount is: " + customers[i].totalWithDiscount);
+		} else {
+		console.log(customers[i].name + " does not get a discount.");
+		}
+	};
+	costWithDiscount();
+}
+
+
+
+// var cameronCostWithDiscount;
+// if (cameronCost > discountCostRequirement) {
+//     cameronCostWithDiscount = cameronCost - (cameronCost * discount);
+// } else {
+//     cameronCostWithDiscount = cameronCost;
+// }
+// console.log('Cameron: ' + cameronCost + ', ' + cameronCostWithDiscount);
+
+// var ryanCostWithDiscount;
+// if (ryanCost > discountCostRequirement) {
+//     ryanCostWithDiscount = ryanCost - (ryanCost * discount);
+// } else {
+//     ryanCostWithDiscount = ryanCost;
+// }
+// console.log('Ryan: ' + ryanCost + ', ' + ryanCostWithDiscount);
+
+// var georgeCostWithDiscount;
+// if (georgeCost > discountCostRequirement) {
+//     georgeCostWithDiscount = georgeCost - (georgeCost * discount);
+// } else {
+//     georgeCostWithDiscount = georgeCost;
+// }
+// console.log('Ryan: ' + georgeCost + ', ' + georgeCostWithDiscount);
+
+
+
+
+</script>
+</body>
+</html>
+
+
