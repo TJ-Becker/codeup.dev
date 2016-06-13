@@ -41,6 +41,9 @@ function addSubject() {
     table = "<tr><td>" + subject + "</td><td>" + grade + "</td></tr>" + table
     console.log(table);
     document.getElementById("grades").innerHTML = table;
+
+    document.getElementById("subject").value = ""
+    document.getElementById("grade").value = ""
 }
 
 function addAverage() {
@@ -61,6 +64,8 @@ function addAverage() {
     } else {
         document.getElementById("student-practice").removeAttribute("class");
     }
+    document.getElementById("subject").value = ""
+    document.getElementById("grade").value = ""
 }
 
 var save = document.getElementById("save-name");
