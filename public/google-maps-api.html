@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div to hold map -->
+    <div id="map-canvas"></div>
+    <button type="button" class="zoom" data-value="5">Zoom Far</button>
+    <button type="button" class="zoom" data-value="10">Zoom Medium</button>
+    <button type="button" class="zoom" data-value="15">Zoom Close</button>
+
+
+
+    <!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFXoxmQ-Ezly_Wy_pv8SvrbvoGO-xbtJc"></script>
+
+    <!-- Script to show address on map -->
+    <script type="text/javascript">
+    
+
+    (function() {
+        "use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 19,
+
+            // This sets the center of the map at our location
+            center: {
+                lat:  29.426791,
+                lng: -98.489602
+            }
+        };
+		var zoom = document.getElementsByClassName("zoom");
+
+	    function clickZoom() {
+	    	var zoomAmount = this.getAttribute("data-value");
+	    	console.log(zoomAmount);
+	    	map.setZoom(Number(zoomAmount));
+	    }
+	   	
+		for (var i = 0; i < zoom.length; i++) {
+	   		zoom[i].addEventListener('click', clickZoom, false);
+	   	}
+
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        // Include code from previous example
+
+		// Set our address to geocode
+		var address = "13810 N Pennsylvania Ave, Oklahoma City, OK 73134";
+
+		// Init geocoder object
+		var geocoder = new google.maps.Geocoder();
+
+		// Geocode our address
+		geocoder.geocode({ "address": address }, function(results, status) {
+
+		   // Check for a successful result
+		   if (status == google.maps.GeocoderStatus.OK) {
+
+		       // Recenter the map over the address
+		       map.setCenter(results[0].geometry.location);
+		   } else {
+
+		       // Show an error message with the status if our request fails
+		       alert("Geocoding was not successful - STATUS: " + status);
+		   }
+		});
+		var codeup = { lat: 29.426791, lng: -98.489602 };
+		var bravo = { lat: 35.611034, lng: -97.548697 };
+		var image = {
+			url: "https://placekitten.com/20/32",
+		    // The origin for this image is (0, 0).
+		    origin: new google.maps.Point(0, 0),
+		    // The anchor for this image is the base of the flagpole at (0, 32).
+		    anchor: new google.maps.Point(0, 32)
+		}
+		// Add the marker to our existing map
+		var marker = new google.maps.Marker({
+		    position: bravo,
+		    map: map,
+		    animation: google.maps.Animation.DROP,
+		    icon: image
+		});
+
+		var infowindow = new google.maps.InfoWindow({
+    	content: "<h1>Best food eva.</h1>"
+		});
+
+		function markerEvent () {
+			infowindow.open(map, marker);
+		}
+
+		marker.addListener('click', markerEvent);
+
+		// Open the window using our map and marker
+	
+	})();
+    </script>
+</body>
+
+</body>
+</html>
