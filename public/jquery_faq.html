@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.show {
+			visibility: hidden;		}
+	</style>
+</head>
+<body>
+	<h1>Fun National Park facts from:<br>austinadventures.com</h1>
+	<button type="button" id="facts">Show Facts?</button>
+	<ol class="show">
+		<li>As you may know, the National Park Service sets aside land for all of us to enjoy in its natural state. How much, you ask? 51 million acres! About the size of Kansas.</li>
+
+		<li>The world’s first national park, Yellowstone, was created in 1872 by President Ulysses S. Grant. Its caretakers – the cavalry.</li>
+
+		<li>Wind Cave National Park is the first cave to be named a national park in the world. In addition to its length (currently sixth longest in the world), Wind Cave is known for its calcite formations known as “boxwork.” About 95% of the world’s boxwork is found in Wind Cave.</li>
+
+		<li>The smallest national park is Hot Springs National Park in Arkansas coming in at about 5,500 acres. The biggest? Wrangell – St. Elias National Park in Alaska has an area of over 8.3 million acres and is larger than each of the nine smallest states.</li>
+
+		<li>Sometimes national parks and national monuments are confused. National parks are chosen for their natural beauty, unique geological features, and unusual ecosystems. National monuments are chosen for their historical or archeological significance.</li>
+
+		<li>Only one state in the country is not lucky enough to currently have either a national park or national monument. It is actually the country’s first state, Delaware. Poor Delaware.</li>
+
+		<li>Death Valley National Park, which has the lowest elevation in the U.S. at 282 feet below sea level, is only 76 miles from Mount Whitney, the highest point in the contiguous U.S. at 14,505 feet.</li>
+
+		<li>The Grand Canyon is both a record of history and source of mystery. The Colorado River running through the canyon cuts through metamorphic rock called schist, which is about 1.75 billion years old. However the beginnings of the canyon are much debated by scientists. Did the Colorado River carve the whole canyon or was there already an ancient gorge waiting for the new river over 5 million years ago?</li>
+
+		<li>Crater Lake, the U.S.’ deepest lake and seventh deepest in the world, took 250 years of rain and snow accumulation to reach its current water level.</li>
+
+		<li>The Yellowstone Caldera, in Yellowstone National Park, is a super volcano that is responsible for three of the world’s six biggest volcano eruptions. It is on pace to blow about 100,000 years from now. So come see it while you still can!</li>
+	</ol>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+	$('#facts').click(function() {
+		$('ol').toggleClass('show');
+	});
+</script>
+
+</script>
+</body>
+</html>
