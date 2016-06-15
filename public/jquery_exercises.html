@@ -11,21 +11,47 @@
 			<li id="Chelsea">Chelsea</li>
 			<li>FC</li>
 		</ul>
+		<h2 id="secret" hidden>YOUR PRINCESS IS IN ANOTHER CASTLE</h2>
 	</div>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script>
-	$(document).ready(function() {
-		$('li, p, h1').css('font-size', '30px');
+	$('h1').click(function() {
+		$(this).css('background-color', 'yellow');
+	})
+
+	$('p').dblclick(function() {
+		$('p').css('font-size', '18px');
+	})
+
+	$('li').hover(
+		function() {
+			$('li').css('color', 'red');
+		},
+		function() {
+			$('li').css('color', 'white');
+		}
+	);
+	var konami = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a", "Enter"];
+	var number = 0;
+	$(document).keydown(function(event) {
+		console.log(event.key);
+		if (konami[number] == event.key) {
+			number = (number + 1);
+		} else {
+			console.log("code failed.")
+			number = 0;
+		}; 
+
+		if (number == konami.length) {
+			console.log("You did it!");
+			$('body').css({'background-color': 'blue'});
+			$('#video').removeAttr('hidden');
+			$('body').html("<img src='http://thelondonpost.net/wp-content/uploads/2015/11/chelsea-football-1024x640.jpeg'><iframe id='video' hidden width='0' height='0' src='https://www.youtube.com/embed/uchOo5HU95s?rel=0&amp;autohide=0&amp;autoplay=1&amp;controls=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>");
+			$('img').css({'height': '100%','width': '100%'});
+		}
 	});
-	$(document).ready(function() {
-		var content = $('h1');
-		alert(content.html());
-	});
-	
+
 	</script>
 </body>
 </body>
 </html>
-
-
-723 clearview
