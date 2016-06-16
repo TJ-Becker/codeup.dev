@@ -35,15 +35,20 @@ function saveName() {
 function addSubject() {
     var subject = document.getElementById("subject").value
     var grade = document.getElementById("grade").value
-    student.addSubject(subject, grade);
+    console.log(subject);
+    console.log(grade);
+    console.log(grade.length);
+        if (subject || grade) {
+        student.addSubject(subject, grade);
 
-    var table = document.getElementById("grades").innerHTML;
-    table = "<tr><td>" + subject + "</td><td>" + grade + "</td></tr>" + table
-    console.log(table);
-    document.getElementById("grades").innerHTML = table;
+        var table = document.getElementById("grades").innerHTML;
+        table = "<tr><td>" + subject + "</td><td>" + grade + "</td></tr>" + table
+        console.log(table);
+        document.getElementById("grades").innerHTML = table;
 
-    document.getElementById("subject").value = ""
-    document.getElementById("grade").value = ""
+        document.getElementById("subject").value = ""
+        document.getElementById("grade").value = ""
+    };
 }
 
 function addAverage() {
