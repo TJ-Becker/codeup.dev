@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href='https://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
+	<style>
+		body {
+			background-image: url("img/fresh_snow.png");
+			font-family: 'Trade Winds', cursive;
+			font-weight: 3em;
+		}
+	</style>
+</head>
+<body>
+	<div id="posts">
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+	$.ajax("data/blog.json").done(function(blog) {
+		console.log("hurray");
+		var info = "";
+		blog.forEach(function(entry, index) {
+			info = info + "<h2>" + entry.title + "</h2><p>" + entry.content + "</p><h4>Published Date: " + entry.date + "</h4><h4>Topics: " + entry.categories.join(', ') + "</h4>"
+			$('#posts').html(info);
+		});
+	});
+</script>
+</body>
+</html>
