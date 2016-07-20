@@ -1,4 +1,5 @@
 <?php
+require_once 'functions.php';
 session_start();
 function pageController() {
     var_dump($_SESSION);
@@ -6,8 +7,8 @@ function pageController() {
         header('Location: authorized.php');
     }
     $data = [];
-    $data['username'] = isset($_POST['username']) ? $_POST['username'] : '';
-    $data['password'] = isset($_POST['password']) ? $_POST['password'] : '';
+    $data['username'] = escape(inputGet('username', ''));
+    $data['password'] = escape(inputGet('password', ''));
     return $data;
 }
 extract(pageController());
@@ -21,7 +22,7 @@ extract(pageController());
     <form method="POST" action="authorized.php">
         <label>Username</label>
         <input type="text" name="username">
-        <label>Number</label>
+        <label>Password</label>
         <input type="password" name="password">
         <input type="submit">
     </form>

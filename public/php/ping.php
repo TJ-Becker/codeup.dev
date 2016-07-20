@@ -1,11 +1,8 @@
 <?php
+    require_once 'functions.php';
     function pageController()
     {
-        if (isset($_GET['counter'])) {
-            $data['counter'] = $_GET['counter'];
-        } else {
-            $data['counter'] = 0;
-        }
+        $data['counter'] = inputGet('counter', 0);
         return $data;
     }
     extract(pageController());

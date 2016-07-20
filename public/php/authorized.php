@@ -1,9 +1,10 @@
 <?php
+require_once 'functions.php';
 session_start();
 function pageController() {
     $data = [];
-    $data['username'] = isset($_POST['username']) ? $_POST['username'] : '';
-    $data['password'] = isset($_POST['password']) ? $_POST['password'] : '';
+    $data['username'] = escape(inputGet('username', ''));
+    $data['password'] = escape(inputGet('password', ''));
     if (($data['username'] == 'guest' && $data['password'] == 'password') || isset($_SESSION['logged_in'])) {
         $data['message'] = 'Authorized.';
         $_SESSION['logged_in'] = true;
